@@ -17,41 +17,54 @@ START
 PROMPT items
 GET
 ItemName=INPUT("Item name:Shampoo, Bangs, Fringes")
-IF ItemName==("Shampoo") THEN
+IF ItemName=("Shampoo") THEN
           DISPLAY("You have selected Shampoo, it costs NS500")
-ELSEIF ItemName==("Bangs") THEN
+ELSE
+     IF ItemName=("Bangs") THEN
           DISPLAY("You have selected Bangs, it costs NS700")
-ELSEIF ItemName==("Fringes") THEN
+ELSE 
+    IF ItemName=("Fringes") THEN
           DISPLAY("You have selected Fringes, it costs NS100")
 ELSE DISPLAY("This Item doesn't exist!")
 ENDIF
 ENDIF
 ENDIF
 END
+
 GET 
 payement=INPUT("How do you want to pay?:Credit Card, Cash")
-IF payement==stg("Credit card") THEN
+IF payement=stg("Credit card") THEN
                 DISPLAY("Enter your Credit card number")
- ELSE DISPLAY  (Please feel free to reach our distributors Iscgem Pharmacies Namibia and Pnp Namibia stores")
+ ELSE 
+ DISPLAY  (Please feel free to reach our distributors Iscgem Pharmacies Namibia and Pnp Namibia stores")
  ENDIF
  END
+
+Prompt Credit_card_number
  GET Credit_Card_number
- DISPLAY("Thanks, enter your Amount")
+ DISPLAY("Thanks")
+INPUT ("enter your amount")
+
  GET Amount
  IF Amount=INT(500)
             DISPLAY("You have bought Shampoo, enter your Home addres")
- ELSEIF Amount=INT(700)
+ ELSE
+       IF Amount=INT(700)
             DISPLAY("You have bought Bangs, enter your Home addres")
-  ELSEIF Amount=INT(500)
+  ELSE 
+       IF Amount=INT(500)
             DISPLAY("You have bought Fringes, enter your Home addres")
-            
+     ELSE DISPLAY ("Error")      
             
 ENDIF  
 ENDIF  
 ENDIF  
 END
+
+Prompt Address
 GET address 
 DISPLAY ("Thanks for trusting us, your item will be delivered by tomorrow")
+End
            
            
            
@@ -72,15 +85,19 @@ DISPLAY ("Thanks for trusting us, your item will be delivered by tomorrow")
  
  START
 
-PROMPT for sellingPrice,costPrice
+PROMPT  sellingPrice,costPrice
 GET sellingPrice, costPrice
 
-
+ sellingPrice= sellingPrice - costPrice
 
 IF sellingPrice < costPrice 
-THEN write 'loss was made'
-ELSEIF else sellingPrice > costPrice 
-THEN difference amount = sellingPrice - costPrice
+THEN
+ WRITE ("loss was made")
+ELSE
+     IF sellingPrice > costPrice
+     
+     THEN 
+ Difference amount = sellingPrice - costPrice
 GET difference amount
 
 Financial return percentage = difference amount ÷ costPrice × 100
