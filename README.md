@@ -78,27 +78,18 @@ GET address
 DISPLAY ("Thanks for trusting us, your item will be delivered by tomorrow")
            
    # HUMAN RESOURCE FUNCTION
-  
-  
- SET Name of employee to ("Josuah")
-INPUT("Enter your name")
-IF name=Josuah
    
-   DISPLAY("HI josuah, your attendence has been recorded")
-ELSE    
-  DISPLAY("Unknown")
-   
-   ENDIF 
-   END
+ START
+      Prompt attendence_record_option
+        Get attendence_record_option
+          If (time = 07:30 - 08:00 AND employee is at work place) THEN 
+          Click_present 
 
-
-
-     
+ELSE      
+     The system record_absent AND empolyee colse_itsef      
       
-      
-      
-      
-      
+ENDIF      
+END      
            
 # SERVICE PORTFOLIO
  
